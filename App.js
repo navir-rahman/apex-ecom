@@ -11,10 +11,26 @@ import {
   extendTheme,
   VStack,
   Box,
+  StatusBar,
 } from "native-base";
 import NativeBaseIcon from "./components/NativeBaseIcon";
 import { Platform } from "react-native";
+import HomeScreen from "./assets/src/Screens/HomeScreen";
+import SingleProductScreen from "./assets/src/Screens/SingleProductScreen";
+import CartScreens from "./assets/src/Screens/CartScreens";
+import ProfileScreen from "./assets/src/Screens/ProfileScreen";
+import ShippingScreen from "./assets/src/Screens/ShippingScreen";
+import PaymentScreen from "./assets/src/Screens/PaymentScreen";
+import PlaceOrderScreen from "./assets/src/Screens/PlaceOrderScreen";
+import OrderScreen from "./assets/src/Screens/OrderScreen";
+import Registartionscreen from "./assets/src/Screens/Registartionscreen";
+import LoginScreen from "./assets/src/Screens/LoginScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import BottomNav from "./assets/src/navigations/BottomNav";
 
+
+const Stack = createNativeStackNavigator();
 // Define the config
 const config = {
   useSystemColorMode: false,
@@ -27,41 +43,35 @@ export const theme = extendTheme({ config });
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Center
+      {/* <Center
         _dark={{ bg: "blueGray.900" }}
         _light={{ bg: "blueGray.50" }}
         px={4}
         flex={1}
       >
         <VStack space={5} alignItems="center">
-          <NativeBaseIcon />
+
           <Heading size="lg">Welcome to NativeBase</Heading>
-          <HStack space={2} alignItems="center">
-            <Text>Edit</Text>
-            <Box
-              _web={{
-                _text: {
-                  fontFamily: "monospace",
-                  fontSize: "sm",
-                },
-              }}
-              px={2}
-              py={1}
-              _dark={{ bg: "blueGray.800" }}
-              _light={{ bg: "blueGray.200" }}
-            >
-              App.js
-            </Box>
-            <Text>and save to reload.</Text>
-          </HStack>
-          <Link href="https://docs.nativebase.io" isExternal>
-            <Text color="primary.500" underline fontSize={"xl"}>
-              Learn NativeBase
-            </Text>
-          </Link>
+          
+
           <ToggleDarkMode />
         </VStack>
-      </Center>
+      </Center> */}
+
+      <NavigationContainer>
+        <StatusBar hidden={true}/>
+        <Stack.Navigator 
+          initialRouteName='Login'
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Register" component={Registartionscreen} />
+          <Stack.Screen name="Order" component={OrderScreen} />
+          <Stack.Screen name="Bottom" component={BottomNav} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
@@ -83,3 +93,39 @@ function ToggleDarkMode() {
     </HStack>
   );
 }
+
+
+
+
+// import { StatusBar } from "expo-status-bar";
+// import HomeScreen from "./assets/src/Screens/HomeScreen";
+// import { NativeBaseProvider } from "native-base";
+
+// export default function App(){
+  
+//   return (
+//     <NativeBaseProvider>
+//     <HomeScreen/>
+//   </NativeBaseProvider>
+//     );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
