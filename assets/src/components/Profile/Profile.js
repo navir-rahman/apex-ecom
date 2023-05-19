@@ -33,7 +33,7 @@ const inputs = [
   {
     label: "New Password",
     type: "password",
-  }
+  },
 ];
 
 export default function Profile() {
@@ -52,25 +52,41 @@ export default function Profile() {
                 {i.label}
               </FormControl.Label>
               <Input
-              type={i.type}
-              borderColor= {Colors.white}
-              borderWidth= {1}
+                type={i.type}
+                borderColor={Colors.white}
+                borderWidth={1}
                 bg={Colors.subgreen}
                 py={3}
                 color={Colors.black}
                 fontSize={20}
                 _focus={{
                   bg: Colors.subgreen,
-                 
                 }}
               ></Input>
             </FormControl>
           ))}
-
-                
-                <Mbutton bg={Colors.main} color={Colors.white} >
-                    Update Profile
-                </Mbutton>
+          <Box flex={1} bg={Colors.black}  h={55} rounded='full'>
+            <Image
+              flex={1}
+              alt="logo"
+              resizeMode="cover"
+              size="lg"
+              w="full"
+              source={require("../../../img/btnBg.png")}
+            />
+            <Box
+              w="full"
+              h="full"
+              position="absolute"
+              top="0"
+              px="6"
+              justifyContent="center"
+            >
+              <Mbutton color={Colors.white} bg={Colors.transparent}>
+                Update Profile
+              </Mbutton>
+            </Box>
+          </Box>
         </VStack>
       </ScrollView>
     </Box>

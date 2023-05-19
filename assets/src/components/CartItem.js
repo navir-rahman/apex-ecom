@@ -25,7 +25,7 @@ const Swiper =() =>(
     previewRowKey='0'
     previewOpenValue={-40}
     previewOpenDelay={3000}
-    data={products.slice(0,2)}
+    data={products}
     renderItem={randerItem}
     renderHiddenItem={randerhiddenItem}
     showsVerticalScrollIndicator={false}
@@ -36,7 +36,7 @@ const randerItem=(data, rowMap)=>(
     <Pressable>
         <Box ml={6} mb={3}>
             <HStack alignItems="center" bg={Colors.white} shadow={1} rounded={10} overflow="hidden">
-                <Center w="25%" bg={Colors.deepgray}>
+                <Center w="25%" bg={Colors.transparent}>
                     <Image source={{uri:data.item.img}} alt={data.item.name} w="full" h={24}
                     resizeMode="contain"
                     ></Image>

@@ -18,6 +18,7 @@ const Colors ={
     lughtBlack: "#bcbcbc",
     subgreen:"#eefae6",
     deepgreen:"#3EAE00",
+    transparent: "#00000000",
     
 }
 

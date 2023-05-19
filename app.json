@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "apex-prototype",
+    "name": "ecom-prototype",
     "slug": "apex-prototype",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,16 +17,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "ecomIso"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.abdur_rahman.apexprototype"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a3c3f603-7d3e-46fa-bdfb-3364818d8f04"
+      }
     }
   }
 }
